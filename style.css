@@ -1,0 +1,38 @@
+/**
+    FONTS
+**/
+@import url('https://fonts.googleapis.com/css2?family=Hind&family=Hind+Vadodara&family=Work+Sans&display=swap');
+/**
+    COLORS
+**/
+:root{
+    --primary-plain-color:rgb(17, 17, 17);
+    --secondary-plain-color:white;
+    --primary-main-color: #EB9358;
+    --secondary-main-color:#523FEB;
+
+}
+html{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+h1{
+    font-family: 'Hind', sans-serif;
+    font-size: 2em;
+}
+h2,h3,h4{
+    font-family: 'Work Sans', sans-serif;
+}
+h2{
+    font-size: 1.7em;
+}
+h3{
+    font-size: 1.5em;
+}
+h4{
+    font-size: 1.3em;
+}
+p{
+    font-family: 'Hind Vadodara', sans-serif;
+    font-size: 1em;
+}
