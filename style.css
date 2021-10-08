@@ -2,19 +2,24 @@
     FONTS
 **/
 @import url('https://fonts.googleapis.com/css2?family=Hind&family=Hind+Vadodara&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Hind&family=Hind+Vadodara&family=Work+Sans&display=swap');
 /**
     COLORS
 **/
 :root{
     --primary-plain-color:rgb(17, 17, 17);
     --secondary-plain-color:white;
+    --tertiary-plain-color: rgb(104, 102, 102);
     --primary-main-color: #EB9358;
     --secondary-main-color:#523FEB;
 
 }
 html{
-    font-size: 20px;
+    font-size: 15px;
     letter-spacing: 1px;
+}
+h1,h2,h3,h4,p,a,li{
+    color: var(--primary-plain-color);
 }
 h1{
     font-family: 'Hind', sans-serif;
@@ -32,7 +37,70 @@ h3{
 h4{
     font-size: 1.3em;
 }
-p{
+p, a, li{
     font-family: 'Hind Vadodara', sans-serif;
     font-size: 1em;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    margin: 0;
+    padding: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+/****
+NAV START
+****/
+nav{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1em 0;
+    border-bottom: 0.2px var(--tertiary-plain-color) solid;
+}
+#nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+}
+#nav-logo h1{
+    font-size: 1.5em;
+    font-family: 'Ephesis', cursive;
+}
+#nav-logo img{
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: 1em;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-right: 1em;
+}
+nav ul li{
+    margin: 0 0.5em;
+    font-weight: bold;
+}
+nav ul li a{
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: var(--secondary-main-color);
+    border-bottom: 2px solid var(--secondary-main-color);
+}
+nav ul li .active{
+    color: var(--secondary-main-color);
 }
