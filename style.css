@@ -19,6 +19,8 @@ html{
     letter-spacing: 1px;
 }
 h1,h2,h3,h4,p,a,li{
+    margin: 0;
+    padding: 0;
     color: var(--primary-plain-color);
 }
 h1{
@@ -44,20 +46,37 @@ p, a, li{
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
-html{
-    margin: 0;
-    padding: 0;
-    
+
+
+/****
+    LOGO START
+****/
+.logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100vw;
+    margin-left: 2em;
+    background: var(--secondary-plain-color);
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    margin: 1em;
+}
+.logo h1{
+    font-size: 1.5em;
+    font-family: 'Ephesis', cursive;
+}
+.logo img{
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: 1em;
 }
 /****
-NAV START
+    LOGO END
+****/
+/****
+    NAV START
 ****/
 nav{
     width: 100vw;
@@ -65,14 +84,14 @@ nav{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 1em 0;
     border-bottom: 0.2px var(--tertiary-plain-color) solid;
+    height: 8vh;
 }
 #nav-logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 1em;
+    margin-left: 2em;
 }
 #nav-logo h1{
     font-size: 1.5em;
@@ -88,7 +107,7 @@ nav ul{
     justify-content: center;
     align-items: center;
     list-style: none;
-    margin-right: 1em;
+    margin-right: 2em;
 }
 nav ul li{
     margin: 0 0.5em;
@@ -104,3 +123,168 @@ nav ul li a:hover{
 nav ul li .active{
     color: var(--secondary-main-color);
 }
+/****
+    NAV END
+****/
+/****
+    HOME START
+****/
+#home{
+    
+    height: 92vh;
+    width: 100vw;
+    background: url(https://images.unsplash.com/photo-1493857671505-72967e2e2760?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80) no-repeat fixed center;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+#home{
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-center both;
+}
+@keyframes circle-in-center {
+    from {
+      clip-path: circle(0%);
+    }
+    to {
+      clip-path: circle(125%);
+    }
+  }
+
+#home #title{
+    width: 70vw;
+    text-align: center;
+    background: var(--secondary-plain-color);
+}
+/****
+    HOME END
+****/
+/****
+    PRICES START
+****/
+#prices{
+    padding: 10vh 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+
+#prices #favorites{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin: 10vh 0;
+    flex-wrap: wrap;
+}
+#prices #favorites .product{
+    width: 20vw;
+    margin: 2em;
+    background: url("./assets/img-b.png") no-repeat center;
+    -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+    height: 20vw;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-bottom-right both;
+}
+#prices #favorites .product:hover .product-info{
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-out-bottom-left both;
+}
+@keyframes circle-in-bottom-right {
+    from {
+      clip-path: circle(0%);
+    }
+    to {
+      clip-path: circle(150% at bottom right);
+    }
+  }
+  
+@keyframes circle-out-bottom-left {
+    from {
+      clip-path: circle(125%);
+    }
+    to {
+      clip-path: circle(0% at bottom left);
+    }
+  }
+  
+@keyframes circle-out-hesitate {
+    0% {
+      clip-path: circle(125%);
+    }
+    40% {
+      clip-path: circle(40%);
+    }
+    100% {
+      clip-path: circle(0%);
+    }
+  }
+  
+  
+
+#prices #favorites .product .product-info{
+    padding: 1em 0;
+    background: rgba(255, 255, 255, 0.918);
+}
+#prices #favorites .product h2{
+    border-bottom: 1px solid var(--secondary-main-color);
+}
+#favorites .product-description{
+    margin: 10px 0;
+}
+#favorites .product-price{
+    font-size: 1.3em;
+    border-radius: 5px;
+    padding: 0.25em 0.5em;
+    background: var(--secondary-main-color);
+    position: relative;
+    top: 10px;
+    color: var(--secondary-plain-color);
+}
+#all-products{
+    width: 90vw;
+    margin: 5vh;
+}
+#all-products .product{
+    margin: 2em 0;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#all-products .product h2{
+    border-bottom: 1px solid var(--secondary-main-color);
+}
+#all-products .product img{
+    margin: 1em 0;
+    height: 25vh;
+    width: 30vh;
+}
+#all-products .product .product-info{
+    margin: 2em;
+}
+#all-products .product p{
+    margin: 1em 0;
+}
+#all-products .product a:hover{
+    color: var(--secondary-main-color);
+}
+/****
+    PRICES END
+****/
