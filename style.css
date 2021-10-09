@@ -498,6 +498,7 @@ nav ul li .active{
     padding: 0 1em;
     background: white;
     list-style: none;
+    border-radius: 5px;
 }
 /****
     FOOTER END
