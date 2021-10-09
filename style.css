@@ -79,7 +79,7 @@ p, a, li{
     NAV START
 ****/
 nav{
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,7 +132,7 @@ nav ul li .active{
 #home{
     
     height: 92vh;
-    width: 100vw;
+    width: 100%;
     background: url(https://images.unsplash.com/photo-1493857671505-72967e2e2760?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80) no-repeat fixed center;
    -webkit-background-size: cover;
    -moz-background-size: cover;
@@ -158,11 +158,6 @@ nav ul li .active{
     }
   }
 
-#home #title{
-    width: 70vw;
-    text-align: center;
-    background: var(--secondary-plain-color);
-}
 /****
     HOME END
 ****/
@@ -175,7 +170,7 @@ nav ul li .active{
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     flex-wrap: wrap;
 }
 
@@ -183,7 +178,7 @@ nav ul li .active{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     margin: 10vh 0;
     flex-wrap: wrap;
 }
@@ -204,7 +199,7 @@ nav ul li .active{
     animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-bottom-right both;
 }
 #prices #favorites .product:hover .product-info{
-    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-out-bottom-left both;
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-out-bottom-left both;
 }
 @keyframes circle-in-bottom-right {
     from {
@@ -212,6 +207,14 @@ nav ul li .active{
     }
     to {
       clip-path: circle(150% at bottom right);
+    }
+  }
+  @keyframes square-out-bottom-left {
+    from {
+      clip-path: inset(0 0 0 0);
+    }
+    to {
+      clip-path: inset(100% 100% 0 0);
     }
   }
   
@@ -240,7 +243,7 @@ nav ul li .active{
 
 #prices #favorites .product .product-info{
     padding: 1em 0;
-    background: rgba(255, 255, 255, 0.918);
+    background: rgba(255, 255, 255, 0.9);
 }
 #prices #favorites .product h2{
     border-bottom: 1px solid var(--secondary-main-color);
@@ -259,7 +262,7 @@ nav ul li .active{
 }
 #all-products{
     width: 90vw;
-    margin: 5vh;
+    margin: 5vh 0;
 }
 #all-products .product{
     margin: 2em 0;
@@ -288,3 +291,14 @@ nav ul li .active{
 /****
     PRICES END
 ****/
+
+/***
+    MOBILE
+***/
+@media screen and (max-width:654px) {
+    #all-products .product{
+        flex-direction: column;
+        height: auto;
+    }
+    
+}
