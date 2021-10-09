@@ -380,6 +380,7 @@ nav ul li .active{
     width: calc(var(--slides)*100%);
     height: var(--slides-height);
     display: flex;
+    
 }
 .slides input{
     display: none;
@@ -393,6 +394,7 @@ nav ul li .active{
     align-items: center;
     flex-direction: column;
     background: var(--secondary-plain-color);
+    height: auto;
 }
 .slide img{
     height: 50px;
@@ -543,12 +545,17 @@ nav ul li .active{
     #prices #favorites .product:hover .product-info{
         animation: none;
     }
+    
+}
+
+@media screen and (max-width: 1200px) {
     :root{
-        --slides-height:60vh;
+        --slides-height:65vh;
     }
     .slider{
         width: 90vw;
         height: auto;
+
     }
     .slide{
         height: auto;
