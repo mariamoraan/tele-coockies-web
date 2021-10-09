@@ -428,6 +428,8 @@ nav ul li .active{
 .slide p{
     height: var(--slides-height);
     width: 30vw;
+    height: auto;
+    margin-bottom: 5vh;
 }
 #radio-1:checked ~ .first{
     margin-left: 0;
@@ -546,9 +548,14 @@ nav ul li .active{
     }
     .slider{
         width: 90vw;
+        height: auto;
+    }
+    .slide{
+        height: auto;
     }
     .slide p{
         width: 90vw;
+        height: auto;
     }
     .navigation-manual, .navigation-auto{
         width: 90vw;
