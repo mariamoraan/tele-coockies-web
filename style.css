@@ -49,6 +49,32 @@ p, a, li{
     scroll-behavior: smooth;
 }
 
+/***
+    SCROLLBAR
+***/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-plain-color); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-plain-color); 
+    border: 0.5px solid var(--tertiary-plain-color);
+  }
+
 
 /****
     LOGO START
@@ -196,11 +222,10 @@ nav ul li .active{
     flex-direction: column;
     flex-wrap: wrap;
     border-radius: 5px;
-    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-bottom-right both;
 }
-#prices #favorites .product:hover .product-info{
+/* #prices #favorites .product:hover .product-info{
     animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-out-bottom-left both;
-}
+} */
 @keyframes circle-in-bottom-right {
     from {
       clip-path: circle(0%);
@@ -242,15 +267,18 @@ nav ul li .active{
   
 
 #prices #favorites .product .product-info{
-    padding: 1em 0;
-    background: rgba(255, 255, 255, 0.9);
+    padding: 1em 1em;
+    background: rgba(255, 255, 255, 0.8);
 }
 #prices #favorites .product h2{
     border-bottom: 1px solid var(--secondary-main-color);
 }
 #favorites .product-description{
     margin: 10px 0;
+    max-height: 50%;
+    overflow-y: scroll;
 }
+
 #favorites .product-price{
     font-size: 1.3em;
     border-radius: 5px;
@@ -296,9 +324,33 @@ nav ul li .active{
     MOBILE
 ***/
 @media screen and (max-width:654px) {
+    nav ul{
+        width: 100%;
+        text-align: center;
+    }
+    #nav-logo{
+        display: none;
+    }
     #all-products .product{
         flex-direction: column;
         height: auto;
+    }
+    #prices #favorites{
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    #prices #favorites .product{
+        width: 90vw;
+        height: 90vw;
+        margin: 2em 0;
+    }
+    #prices #favorites .product .product-info .product-description{
+        max-height: 40vw;
+        overflow: scroll;
+    }
+    #prices #favorites .product:hover .product-info{
+        animation: none;
     }
     
 }
